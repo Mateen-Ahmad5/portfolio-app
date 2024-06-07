@@ -56,6 +56,11 @@
     margin-bottom: 15px;
     line-height: 25px;
 }
+.sidebar ul li{
+    list-style-position: inside;
+    
+    
+}
 img{
     border-radius: 50%;
 }

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="header"><a href="./index.html">click back</a></div>
+    <div class="contain">
+         <div class="sinng-up">
+            <h1>Sign Up </h1>
+            <form class="sing-form" id="validationForm">
+                <div class="input-field">
+                    <input type="text" id="username" placeholder="Enter User Name">
+                    <span id="usernameError" class="error"></span>
+                </div>
+                <div class="input-field">
+                    <input type="email" id="email" placeholder="Enter Your Email">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="input-field">
+                    <input type="password" id="password" placeholder="Enter Your Password">  <span id="passwordError" class="error"></span>
+                </div>
+                <div class="input-field">
+                    <button id="myBtn" type="submit">Submit</button>
+                </div>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+      </div>
+     <script src="javascript.js"></script>
+</body>
+</html>
