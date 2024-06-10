@@ -1,45 +1,42 @@
-document.getElementById('validationForm').addEventListener('submit', function(event) {
+function validateForm(event) {
     event.preventDefault(); 
-   
-    const username = document.getElementById('username').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    
-    const usernameError = document.getElementById('usernameError');
-    const emailError = document.getElementById('emailError');
-    const passwordError = document.getElementById('passwordError');
-    const messageDiv = document.getElementById('message');
-
-    usernameError.textContent = '';
-    emailError.textContent = '';
-    passwordError.textContent = '';
-    messageDiv.style.display = 'none';
-    messageDiv.classList.remove('success', 'failure');
-    messageDiv.textContent = '';
 
     let isValid = true;
 
-    if (!username) {
+    let name = document.getElementById('username').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+    let nameError = document.getElementById('usernameError');
+    let emailError = document.getElementById('emailError');
+    let passwordError = document.getElementById('passwordError');
+    let successMessage = document.getElementById('successMessage');
+ 
+    nameError.innerText = '';
+    emailError.innerText = '';
+    passwordError.innerText = '';
+    successMessage.innerText = '';
+
+    if (name === '') {
+        nameError.innerText = 'Name is required';
+        nameError.style.display = 'block';
         isValid = false;
-        usernameError.textContent = 'Username is required.';
     }
-    if (!email) {
+    if (email === '' || !email.includes('@')) {
+        emailError.innerText = 'Email is required and must contain \'@\'';
+        emailError.style.display = 'block';
         isValid = false;
-        emailError.textContent = 'Email is required.';
-    }
-    if (password.length < 8) {
-        isValid = false;
-        passwordError.textContent = 'Password must be at least 8 characters long.';
-    }
-    if (isValid) {
-        messageDiv.classList.add('success');
-        messageDiv.textContent = 'Registration successful';
-    } else {
-        messageDiv.classList.add('failure');
-        messageDiv.textContent = 'Failure! Please correct the errors and try again.';
     }
 
-    
-    messageDiv.style.display = 'block';
-});
+    if  (password.length < 8) {
+        passwordError.innerText = 'Password must be at least 8 characters long';
+        passwordError.style.display = 'block';
+        isValid = false;
+    }
+    if (isValid) {
+        successMessage.innerText = 'Registration successful 🙂';
+        
+    } else {
+        successMessage.innerText = 'Failure! Please enter correct data';
+    }
+}
