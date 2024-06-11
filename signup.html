@@ -7,34 +7,32 @@
     <link rel="stylesheet" href="signup.css" />
   </head>
   <body>
-    <header class="header"><a href="./index.html">click back</a></header>
-    <main class="main-content">
-      <div class="sinng-up">
-        <h1>Sign Up</h1>
-        <form class="form" id="userForm" onsubmit="return validateForm(event)">
-          <div class="input-field">
-            <input type="text" id="username" placeholder="Enter User Name" />
-            <span id="usernameError" class="error"></span>
+    <header>
+      <nav>
+          <a href="index.html">Login</a>
+      </nav>
+  </header>
+  <div class="container">
+        <form class="form-container" onsubmit="return validateForm(event)">
+          <div class="form-group" >
+               <h2>Sign Up Form</h2>
           </div>
-          <div class="input-field">
-            <input  id="email" placeholder="Enter Your Email" />
-            <span id="emailError" class="error"></span>
+          <div class="form-group">
+               <input type="text" id="username"  placeholder="Enter your username" >
+               <span id="usernameError" class="error"></span>
           </div>
-          <div class="input-field">
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter Your Password"
-            />
-            <span id="passwordError" class="error"></span>
+          <div class="form-group">
+              <input type="text" id="email"  placeholder="Enter your email" >
+              <span id="emailError" class="error"></span>
+           </div>
+          <div class="form-group">
+              <input type="password" id="password" placeholder="Enter your password" >
+              <span id="passwordError" class="error"></span>
           </div>
-          <div class="input-field">
-            <button type="submit">Submit</button>
-          </div>
+           <button type="submit">Submit</button>
+           <div id="successMessage" class="succes"></div>
         </form>
-        <div id="successMessage" class="succes"></div>
-      </div>
-    </main>
+       </div>
     <script src="javascript.js"></script>
   </body>
 </html>

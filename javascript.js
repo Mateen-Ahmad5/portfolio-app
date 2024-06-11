@@ -2,6 +2,11 @@ function validateForm(event) {
     event.preventDefault(); 
 
     let isValid = true;
+    
+    function validateEmail(email) {
+        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
 
     let name = document.getElementById('username').value;
     let email = document.getElementById('email').value;
@@ -22,10 +27,9 @@ function validateForm(event) {
         nameError.style.display = 'block';
         isValid = false;
     }
-    if (email === '' || !email.includes('@')) {
-        emailError.innerText = 'Email is required and must contain \'@\'';
-        emailError.style.display = 'block';
-        isValid = false;
+    if (!validateEmail(email)) {
+        emailError.innerText = 'Email is required and must be valid.';
+        isValid = false
     }
 
     if  (password.length < 8) {
@@ -33,10 +37,14 @@ function validateForm(event) {
         passwordError.style.display = 'block';
         isValid = false;
     }
+   
     if (isValid) {
         successMessage.innerText = 'Registration successful 🙂';
         
     } else {
         successMessage.innerText = 'Failure! Please enter correct data';
     }
+    
+    
 }
+
