@@ -71,8 +71,8 @@ header a {
     color: red; 
     text-align: center;
     font-size: 15px;
+    display: none;
 }
-.succes { 
-   color: rgb(21, 204, 21);
+.message { 
    text-align: center;   
 }

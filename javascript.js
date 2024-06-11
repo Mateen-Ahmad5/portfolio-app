@@ -15,12 +15,12 @@ function validateForm(event) {
     let nameError = document.getElementById('usernameError');
     let emailError = document.getElementById('emailError');
     let passwordError = document.getElementById('passwordError');
-    let successMessage = document.getElementById('successMessage');
+    let Message = document.getElementById('message');
  
     nameError.innerText = '';
     emailError.innerText = '';
     passwordError.innerText = '';
-    successMessage.innerText = '';
+    Message.innerText = '';
 
     if (name === '') {
         nameError.innerText = 'Name is required';
@@ -29,6 +29,7 @@ function validateForm(event) {
     }
     if (!validateEmail(email)) {
         emailError.innerText = 'Email is required and must be valid.';
+        emailError.style.display = 'block';
         isValid = false
     }
 
@@ -39,12 +40,13 @@ function validateForm(event) {
     }
    
     if (isValid) {
-        successMessage.innerText = 'Registration successful 🙂';
+        Message.innerText = 'Registration successful 🙂';
+        Message.style.color = "green";
         
     } else {
-        successMessage.innerText = 'Failure! Please enter correct data';
+        Message.innerText = 'Failure! Please enter correct data';
+        Message.style.color = "red";
     }
-    
-    
+        
 }
 
