@@ -11,6 +11,10 @@
     margin-left: 1rem;
     margin-right: 1rem;
 }
+header a {
+    text-decoration: none;
+    font-size: 26px;
+}
 .header{
     margin-top: 5px;
 }
@@ -19,32 +23,27 @@
     display: flex;
     flex: 1;
 }
-
 .main-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .section1, .section2 {
     padding: 1rem;
     border: 1px solid #ccc;
     margin-bottom: 1rem;
     margin-left: 1rem;
 }
-
 .section1 {
     background: #f4f4f4;
     height: 200px;
     margin-top: 15px;
 }
-
 .section2 {
     background: #e4e4e4;
     height: 350px;
 
 }
-
 .sidebar {
     background: #d4d4d4;
     width: 40%;
@@ -56,16 +55,21 @@
     margin-bottom: 15px;
     line-height: 25px;
 }
+.sidebar ul li{
+    list-style-position: inside;
+    
+    
+}
 img{
     border-radius: 50%;
 }
-
 .footer {
     background: #333;
     text-align: center;
     padding: 1rem;
     margin-bottom: 5px;
 }
+
 
 
 
