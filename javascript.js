@@ -46,7 +46,6 @@ function validateForm(event) {
     } else {
         Message.innerText = 'Failure! Please enter correct data';
         Message.style.color = "red";
-    }
-        
+    }    
 }
 
