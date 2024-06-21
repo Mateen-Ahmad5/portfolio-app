@@ -18,6 +18,7 @@ document.getElementById('experience-form').addEventListener('submit', function(e
             <p>${startDate} - ${endDate}</p>
             <p>${description}</p>
         `;
+
         document.getElementById('experience-entries').appendChild(experienceEntry);
 
         document.getElementById('company').value = '';
@@ -26,7 +27,10 @@ document.getElementById('experience-form').addEventListener('submit', function(e
         document.getElementById('description').value = '';
 
         document.getElementById('experience-form').style.display = 'none';
+       
     } else {
         alert('Please fill in all fields.');
     }
+  
+
 });
