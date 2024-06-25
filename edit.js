@@ -1,36 +1,43 @@
-document.getElementById('add-experience-btn').addEventListener('click', function() {
-    document.getElementById('experience-form').style.display = 'block';
-});
-
-document.getElementById('experience-form').addEventListener('submit', function(event) {
+function showExperienceForm() {
+  document.getElementById("experience-form").style.display = "block";
+}
+  document.getElementById("experience-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const company = document.getElementById('company').value;
-    const startDate = document.getElementById('start-date').value;
-    const endDate = document.getElementById('end-date').value;
-    const description = document.getElementById('description').value;
+    let company = document.getElementById("company");
+    let startDate = document.getElementById("start-date");
+    let endDate = document.getElementById("end-date");
+    let description = document.getElementById("description"); 
+    
+    if (company.value && startDate.value && endDate.value && description.value) {
+      const experienceEntry = document.createElement("div");
+      experienceEntry.classList.add("experience-entry");
+      experienceEntry.innerHTML = `
+            <h3>${company.value}</h3>
+            <p>${startDate.value}</p>
+            <p>${endDate.value}</p>
+            <p>${description.value}</p>
+        `;    
+        
+      document.getElementById("experience-entries").appendChild(experienceEntry);
 
-    if (company && startDate && endDate && description) {
-        const experienceEntry = document.createElement('div');
-        experienceEntry.classList.add('experience-entry');
-        experienceEntry.innerHTML = `
-            <h3>${company}</h3>
-            <p>${startDate} - ${endDate}</p>
-            <p>${description}</p>
-        `;
+        // Save the form data to local storage
 
-        document.getElementById('experience-entries').appendChild(experienceEntry);
+    let experiences = JSON.parse(localStorage.getItem("experience")) || [];
+    experiences.push({
+      company: company.value,
+      startDate: startDate.value,
+      endDate: endDate.value,
+      description: description.value
+    });
+    localStorage.setItem("experience", JSON.stringify(experiences));
 
-        document.getElementById('company').value = '';
-        document.getElementById('start-date').value = '';
-        document.getElementById('end-date').value = '';
-        document.getElementById('description').value = '';
+      company.value = "";
+      startDate.value = "";
+      endDate.value = "";
+      description.value = "";
 
-        document.getElementById('experience-form').style.display = 'none';
-       
-    } else {
-        alert('Please fill in all fields.');
+      document.getElementById("experience-form").style.display = "none";
     }
-  
-
-});
+ });
+ 
