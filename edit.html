@@ -19,7 +19,7 @@
       <main class="main">
         <div class="content">
           <section class="about">
-            <h1>About Me</h1>
+            <h2>About Me</h2>
             <p>
               JavaScript, and React. I create intuitive, responsive, and dynamic
               web applications. My focus is on writing clean, efficient code and
@@ -30,14 +30,9 @@
             </p>
           </section>
           <section class="experience">
-            <h2>Experience</h2>
-            <button
-              class="add-experience-btn"
-              id="add-experience-btn"
-              onclick="showExperienceForm()"
-            >
-              Add Experience
-            </button>
+            <h3>Experience</h3>
+            <button class="add-experience-btn"
+            id="add-experience-btn" onclick="showExperienceForm()">Add Experience</button>
             <form id="experience-form" class="experience-form">
               <div class="form-inline">
                 <div class="form-field">
@@ -68,12 +63,18 @@
           <p>Full Stack Developer</p>
           <div class="skills">
             <h3>Skills</h3>
-            <div class="skill-item">HTML</div>
-            <div class="skill-item">CSS</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">React JS</div>
-            <div class="skill-item">Node JS</div>
-            <div class="skill-item">MongoDB</div>
+            <div class="skill-row">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-item">JavaScript</div>
+              <div class="skill-item">React JS</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-item">Node JS</div>
+              <div class="skill-item">MongoDB</div>
+            </div>
           </div>
         </aside>
       </main>
