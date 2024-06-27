@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
-    <link rel="stylesheet" href="style.css">
-    
-    <body>
-        <header class="header">
-          <a href="./edit.html">editpage</a>
-          <a href="./signup.html">login In</a>
-        </header>
-        <div class="content-wrapper">
-            <main class="main-content">
-                <section class="section1">
-                    <h1>About</h1>
-                    <p>Experienced and detail-oriented Computer Science graduate with a successful track record Computer Science, enhancing theoretical knowledge with practical experience. Seeking a challenging role where operational expertise, technical skills, and a proactive approach can contribute to organizational success.</p>
-                </section>
-                <section class="section2">
-                    <h2>Exeprience</h2>
-                    <p>will add experience section later</p>
-                </section>
-            </main>
-            <aside class="sidebar">
-                <img src="img.jpg" alt="" srcset="">
-             <h3>Name</h3>
-             <p>Mateen Ahmad</p>
-             <h4>skill</h4>
-             <ul>
-                 <li>Team Mangement</li>
-                 <li>Operation Managment</li>
-                 <li>Problem Solving</li>
-                 <li>Communicatin skills</li>
-             </ul>
-            </aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>My Portfolio</h1>
+        <nav class="nav">
+          <ul>
+            <li><a href="edit.html">Edit Page</a></li>
+            <li><a href="signup.html">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <div class="content">
+          <section class="about">
+            <h1>About Me</h1>
+            <p>
+              JavaScript, and React. I create intuitive, responsive, and dynamic
+              web applications. My focus is on writing clean, efficient code and
+              delivering engaging user experiences. With a keen eye for detail,
+              I aim to bridge the gap between design and technology. I am always
+              eager to learn and adapt to new challenges in the ever-evolving
+              field of web development.
+            </p>
+          </section>
+          <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-entries" id="experience-entries"></div>
+          </section>
         </div>
-        <footer class="footer">
-            <a href="http://">linkedin</a>
-        </footer>
-    
-    </body>
+        <aside class="sidebar">
+          <img src="img.jpg" alt="Avatar" class="avatar" />
+          <h3>Hi, I'm Mateen Ahmad</h3>
+          <p>Full Stack Developer</p>
+          <div class="skills">
+            <h3>Skills</h3>
+            <div class="skill-row">
+              <div class="skill-item">HTML</div>
+              <div class="skill-item">CSS</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-item">JavaScript</div>
+              <div class="skill-item">React JS</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-item">Node JS</div>
+              <div class="skill-item">MongoDB</div>
+            </div>
+            <!-- <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">React JS</div>
+            <div class="skill-item">Node JS</div>
+            <div class="skill-item">MongoDB</div> -->
+          </div>
+        </aside>
+      </main>
+      <footer class="footer">
+        <a href="#" target="_blank">LinkedIn</a>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+      </footer>
+    </div>
+    <script src="javascript.js"></script>
+  </body>
 </html>

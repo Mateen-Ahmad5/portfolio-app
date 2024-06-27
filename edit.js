@@ -1,6 +1,7 @@
 function showExperienceForm() {
   document.getElementById("experience-form").style.display = "block";
 }
+
   document.getElementById("experience-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -13,22 +14,21 @@ function showExperienceForm() {
       const experienceEntry = document.createElement("div");
       experienceEntry.classList.add("experience-entry");
       experienceEntry.innerHTML = `
-            <h3>${company.value}</h3>
-            <p>${startDate.value}</p>
-            <p>${endDate.value}</p>
-            <p>${description.value}</p>
+            <h3>Company Name: ${company.value}</h3>
+            <p>Start Date: ${startDate.value}</p>
+            <p>End Date: ${endDate.value}</p>
+            <p>Description: ${description.value}</p>
         `;    
         
       document.getElementById("experience-entries").appendChild(experienceEntry);
 
-        // Save the form data to local storage
 
     let experiences = JSON.parse(localStorage.getItem("experience")) || [];
     experiences.push({
       company: company.value,
       startDate: startDate.value,
       endDate: endDate.value,
-      description: description.value
+      description: description.value,
     });
     localStorage.setItem("experience", JSON.stringify(experiences));
 
@@ -40,4 +40,22 @@ function showExperienceForm() {
       document.getElementById("experience-form").style.display = "none";
     }
  });
+ function loadExperiences() {
+    let experiences = JSON.parse(localStorage.getItem("experience")) || [];
+    const experienceEntries = document.getElementById("experience-entries");
+
+    experiences.forEach(exp => {
+        const experienceEntry = document.createElement("div");
+        experienceEntry.classList.add("experience-entry");
+        experienceEntry.innerHTML = `
+            <h3>Company Name: ${exp.company}</h3>
+            <p>Start Date: ${exp.startDate}</p>
+            <p>End Date: ${exp.endDate}</p>
+            <p>Description: ${exp.description}</p>
+        `;
+        experienceEntries.appendChild(experienceEntry);
+    });
+}
+ document.addEventListener('DOMContentLoaded', loadExperiences);
+
  
