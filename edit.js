@@ -1,7 +1,6 @@
 function showExperienceForm() {
   document.getElementById("experience-form").style.display = "block";
 }
-
 document.getElementById("experience-form").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -9,7 +8,7 @@ document.getElementById("experience-form").addEventListener("submit", function (
     let startDate = document.getElementById("start-date");
     let endDate = document.getElementById("end-date");
     let description = document.getElementById("description");
-
+    
     if (
       company.value &&startDate.value &&endDate.value &&description.value ) {
       let experiences = JSON.parse(localStorage.getItem("experience")) || [];
@@ -31,7 +30,7 @@ function loadExperiences() {
   experienceEntries.innerHTML = "";
 
   experiences.forEach((exp) => {
-    const experienceEntry = document.createElement("div");
+    let experienceEntry = document.createElement("div");
     experienceEntry.classList.add("experience-entry");
     experienceEntry.innerHTML = `
             <h3>Company Name: ${exp.company}</h3>
@@ -42,5 +41,4 @@ function loadExperiences() {
     experienceEntries.appendChild(experienceEntry);
   });
 }
-
 loadExperiences();
