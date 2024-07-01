@@ -6,7 +6,6 @@
 .container {
     max-width: 1550px;
     margin: 0 auto;
-    min-height: 100vh;
     background-color: #f4f4f4;
 }
 .header {
@@ -40,12 +39,10 @@ nav ul li a:hover {
 .about{
     padding: 20px;
     background-color: #fff;
-
 }
 .about h2 {
      font-size: 24px;
-     margin-bottom: 20px;
-        
+     margin-bottom: 20px;      
 }
 .about p {
     font-size: 18px;
@@ -56,6 +53,11 @@ nav ul li a:hover {
     flex: 1;
     padding-right: 20px;
 }
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 .sidebar {
     width: 25%;
     max-width: 300px;
@@ -97,9 +99,10 @@ nav ul li a:hover {
 }
 .experience-entries {
     max-height: 200px;
-    overflow-y: auto;
+    overflow-y: auto;   
 }
 .experience {
+    margin-top: 20px;
     padding: 20px;
     background-color: #fff;
 }
@@ -109,14 +112,12 @@ nav ul li a:hover {
 }
 .experience-form {
     display: none;
-    margin-top: 8px;
-     
+    margin-top: 8px;    
 }
 .experience-entry {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border-bottom: 1px solid ;
     line-height: 1.6;
-    margin-top: 15px; 
+    margin-top: 8px; 
 }
 .form-field {
     display: flex;
@@ -127,7 +128,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 .form-field input{
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }

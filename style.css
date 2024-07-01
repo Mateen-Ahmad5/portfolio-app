@@ -6,7 +6,7 @@
 .container {
     max-width: 1550px;
     margin: 0 auto; 
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #f4f4f4;
  }
 .header {
@@ -27,14 +27,17 @@ nav ul li a:hover {
     gap: 20px;
 }
 .nav ul li a {
-    color: black;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 4px;
 }
 .login-button {
     background-color:blue;
+    color: white;
     transition: background-color 0.3s;
+}
+.edit-button{
+    color: black;
 }
 .main {
     display: flex;
@@ -105,15 +108,14 @@ nav ul li a:hover {
     padding: 18px;
     background-color: #fff;
 }
-.experience h3{
+.experience h4{
     font-size: 24px;
-    padding-bottom: 20px;
+    padding-bottom: 8px;
 }
 .experience-entry {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border-bottom: 1px solid ;
     line-height: 1.6;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 .footer{
     display: flex;
