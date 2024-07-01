@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Portfolio page</title>
+    <link rel="stylesheet" href="editstyle.css" />
+    <title>Edit page</title>
   </head>
   <body>
     <div class="container">
@@ -12,8 +12,7 @@
         <h1>My Portfolio</h1>
         <nav class="nav">
           <ul>
-            <li><a href="edit.html" class="edit-button">Edit Portfolio</a></li>
-            <li><a href="signup.html" class="login-button">Login</a></li>
+            <li><a href="index.html">Home</a></li>
           </ul>
         </nav>
       </header>
@@ -31,7 +30,31 @@
             </p>
           </section>
           <section class="experience">
-            <h4>Experience</h4>
+            <div class="experience-header">
+              <h3>Experience</h3>
+              <button class="add-experience-btn" id="add-experience-btn" onclick="showExperienceForm()">Add Experience</button>
+            </div>
+            <form id="experience-form" class="experience-form">
+              <div class="form-inline">
+                <div class="form-field">
+                  <label for="company">Company Name:</label>
+                  <input type="text" id="company" />
+                </div>
+                <div class="form-field">
+                  <label for="start-date">Start Date:</label>
+                  <input type="date" id="start-date" />
+                </div>
+                <div class="form-field">
+                  <label for="end-date">End Date:</label>
+                  <input type="date" id="end-date" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="description">Description:</label>
+                <textarea id="description"></textarea>
+              </div>
+              <button class="save-btn" type="submit">Save</button>
+            </form>
             <div class="experience-entries" id="experience-entries"></div>
           </section>
         </div>
@@ -57,10 +80,10 @@
         </aside>
       </main>
       <footer class="footer">
-        <a href="#" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         <p>&copy; 2024 My Website. All rights reserved.</p>
       </footer>
     </div>
-    <script src="javascript.js"></script>
+    <script src="edit.js"></script>
   </body>
 </html>
