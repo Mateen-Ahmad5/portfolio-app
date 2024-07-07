@@ -66,33 +66,39 @@ nav ul li a:hover {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    align-items: center; 
+    gap: 16px;
+    align-items: center;
     background-color: #fff;
-}
-.skill-row {
+    padding: 20px;
+  }
+  .skills {
+    width: 100%;
+  }
+  .skills h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+  .skill-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px; 
-  }
-.skills h3{
     margin-bottom: 12px;
-} 
-.skill-item {
-    background-color: blue;
+  }
+  .skill-item {
+    background-color: #007BFF;
     color: #fff;
     padding: 6px 12px;
     border-radius: 5px;
     flex: 1;
-    margin:0 5px;
+    margin: 0 5px;
     font-size: 16px;
-}
-.sidebar img {
+    text-align: center;
+  }
+  .sidebar img {
     width: 100px;
     height: 100px;
-    border-radius: 45%;
+    border-radius: 50%;
     padding-bottom: 1em;
-}
+  }
 .footer {
     background-color: #333;
     color: #fff;
@@ -102,6 +108,19 @@ nav ul li a:hover {
 .experience-entries {
     max-height: 300px;
     overflow-y: auto;
+  }
+  .div{
+    display: flex;
+    justify-content: space-between;
+  }
+  .div input{
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  .div input:focus{
+    outline: none;
   }
 .experience {
     margin-top: 15px; 
@@ -113,7 +132,7 @@ nav ul li a:hover {
     padding-bottom: 8px;
 }
 .experience-entry {
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid black ;
     line-height: 1.6;
     margin-top: 8px;
 }
@@ -130,3 +149,24 @@ nav ul li a:hover {
 .footer a:hover {
     color:lightblue;
 } 
+.scrolling-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  .scrolling-text h3, .scrolling-text p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+    font-size: 20px;
+    margin: 0;
+  }
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
