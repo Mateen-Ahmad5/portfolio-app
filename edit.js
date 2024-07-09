@@ -98,8 +98,9 @@ function loadExperiences() {
            <div><h3>Company Name: ${exp.company}</h3>
             <p>Start Date: ${exp.startDate}</p>
             <p>End Date: ${exp.endDate}</p>
-            <p>Description: ${exp.description}</p></div>
-             <div class="button-container">
+            <p>Description: ${exp.description}</p>
+            </div>
+
               
 <div class="button-container">
 <button class="icon-button" onclick="editExperience('${exp.id}')">
