@@ -63,6 +63,7 @@ async function sendUserData(userData) {
     if (response.ok) {
       document.getElementById("success-message").innerText = 'User registered successfully';
       console.log(userData);
+      document.getElementById("form").reset();
     } else {
       alert(`Error: ${data.message}`);
     }
@@ -86,9 +87,8 @@ form.addEventListener("submit", async function (e) {
     const userData = {
       name: username.value,
       email: email.value,
-      password: password.value
+      password: password.value,
     };
-
     await sendUserData(userData);
   }
 });

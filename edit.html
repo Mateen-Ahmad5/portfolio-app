@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="editstyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Edit page</title>
   </head>
   <body>
@@ -31,7 +32,7 @@
           </section>
           <section class="experience">
             <div class="experience-header">
-              <h3>Experience</h3>
+              <h4>Experience</h4>
               <button class="add-experience-btn" id="add-experience-btn" onclick="showExperienceForm()">Add Experience</button>
             </div>
             <form id="experience-form" class="experience-form">
@@ -59,9 +60,11 @@
           </section>
         </div>
         <aside class="sidebar">
-          <img src="img.jpg" alt="Avatar" class="avatar" />
+          <div class="profile">
+            <img src="img.jpg" alt="Avatar" class="avatar" />
           <h3>Hi, I'm Mateen Ahmad</h3>
-          <p>Full Stack Developer</p>
+          <p>Mern Stack Developer</p>
+          </div>
           <div class="skills">
             <h3>Skills</h3>
             <div class="skill-row">
@@ -69,20 +72,25 @@
               <div class="skill-item">CSS</div>
             </div>
             <div class="skill-row">
-              <div class="skill-item">JavaScript</div>
-              <div class="skill-item">React JS</div>
+              <div class="skill-item">JAVASCRIPT</div>
+              <div class="skill-item">REACT JS</div>
             </div>
             <div class="skill-row">
-              <div class="skill-item">Node JS</div>
-              <div class="skill-item">MongoDB</div>
+              <div class="skill-item">NODE JS</div>
+              <div class="skill-item">MONGODB</div>
             </div>
           </div>
         </aside>
       </main>
       <footer class="footer">
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-      </footer>
+        <div class="footer-right">
+          <p> Email: <a href="mailto:mateenahmad9235@gmail.com" >mateenahmad9235@gmail.com</a></p>
+          <p>Phone: <a href="tel:+92304170925">+92 304 170 925</a></p>
+          <p> LinkedIn: <a href="https://www.linkedin.com" target="_blank">My profile</a></p>
+        </div>
+        <div class="footer-left">
+          <p>&copy; 2024 My Website. All rights reserved.</p>
+        </div>
     </div>
     <script src="edit.js"></script>
   </body>
