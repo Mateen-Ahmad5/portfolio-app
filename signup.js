@@ -1,3 +1,4 @@
+
 function validateForm(event) {
   event.preventDefault();
 
@@ -38,7 +39,6 @@ function validateForm(event) {
     passwordError.style.display = "block";
     isValid = false;
   }
-
   if (isValid) {
     Message.innerText = "Registration successful 🙂";
     Message.style.color = "green";
