@@ -9,7 +9,7 @@ filterExperienceField.addEventListener("input", (e) => {
     }
   });
 
-  if (e.target.value !== "") {
+  if (e.target.value.trim() !== "") {
     loadExperiences(newExperience);
   } else {
     let experiences = JSON.parse(localStorage.getItem("experience")) || [];
