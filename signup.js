@@ -63,6 +63,7 @@ async function sendUserData(userData) {
     if (response.ok) {
       document.getElementById("success-message").innerText = 'User registered successfully';
       console.log(userData);
+      form.reset();
       document.getElementById("form").reset();
     } else {
       alert(`Error: ${data.message}`);
