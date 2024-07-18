@@ -1,7 +1,12 @@
-let company = document.getElementById("company");
-let startDate = document.getElementById("start-date");
-let endDate = document.getElementById("end-date");
-let description = document.getElementById("description");
+const company = document.getElementById("company");
+const startDate = document.getElementById("start-date");
+const endDate = document.getElementById("end-date");
+const description = document.getElementById("description");
+
+const companyError = document.getElementById("company-error");
+const startDateError = document.getElementById("start-date-error");
+const endDateError = document.getElementById("end-date-error");
+const descriptionError = document.getElementById("description-error");
 
 let isEdit = false;
 
@@ -9,13 +14,48 @@ function showExperienceForm() {
   document.getElementById("experience-form").style.display = "block";
 }
 document.getElementById("experience-form").addEventListener("submit", function (event) {
-  if (!company.value || !startDate.value || !endDate.value || !description.value) {
     event.preventDefault();
-    return;
-  }
 
-  event.preventDefault();
-  
+    let isValid = true;
+
+    companyError.textContent = "";
+    startDateError.textContent = "";
+    endDateError.textContent = "";
+    descriptionError.textContent = "";
+
+    if (!company.value.trim()) {
+      companyError.textContent = "Company name is required.";
+      isValid = false;
+    }
+
+    if (!startDate.value) {
+      startDateError.textContent = "Start date is required.";
+      isValid = false;
+    }
+
+    if (!endDate.value) {
+      endDateError.textContent = "End date is required.";
+      isValid = false;
+    }
+
+    if (
+      startDate.value &&
+      endDate.value &&
+      new Date(startDate.value) >= new Date(endDate.value)
+    ) {
+      startDateError.textContent = "Start date must be earlier than end date.";
+      isValid = false;
+    }
+
+    if (!description.value.trim()) {
+      descriptionError.textContent = "Description is required.";
+      isValid = false;
+    }
+
+    if (!isValid) {
+      return;
+    }
+
     let experiences = JSON.parse(localStorage.getItem("experience")) || [];
 
     let id = Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
@@ -39,7 +79,8 @@ document.getElementById("experience-form").addEventListener("submit", function (
 
       localStorage.setItem("experience", JSON.stringify(newExperiences));
       isEdit = false;
-    } else if (company.value && startDate.value && endDate.value && description.value) {
+    } else if (company.value && startDate.value && endDate.value && description.value
+    ) {
       experiences.push({
         id: id,
         company: company.value,
@@ -52,7 +93,10 @@ document.getElementById("experience-form").addEventListener("submit", function (
     }
 
     document.getElementById("experience-form").reset();
-    document.getElementById("experience-form").style.display = "none";
+    function showExperienceForm() {
+      document.getElementById("experience-form").style.display = "none";
+    }
+    showExperienceForm();
     loadExperiences();
   });
 function editExperience(id) {
@@ -69,15 +113,20 @@ function editExperience(id) {
 }
 
 function deleteExperience(id) {
-  let experiences = JSON.parse(localStorage.getItem("experience")) || [];
-  if (experiences.length > 0) {
-    let newExperience = experiences.filter((exp) => {
-      if (exp.id !== id) {
-        return exp;
-      }
-    });
-    localStorage.setItem("experience", JSON.stringify(newExperience));
-    loadExperiences();
+  let confirmation = confirm(
+    "Are you sure you want to delete this experience?"
+  );
+  if (confirmation) {
+    let experiences = JSON.parse(localStorage.getItem("experience")) || [];
+    if (experiences.length > 0) {
+      let newExperience = experiences.filter((exp) => {
+        if (exp.id !== id) {
+          return exp;
+        }
+      });
+      localStorage.setItem("experience", JSON.stringify(newExperience));
+      loadExperiences();
+    }
   }
 }
 
@@ -120,6 +169,11 @@ function loadExperiences() {
       experienceEntries.appendChild(experienceEntry);
     });
   }
+}
+function closeExperienceForm() {
+  document.getElementById("experience-form").reset();
+  document.getElementById("experience-form").style.display = "none";
+  isEdit = false;
 }
 
 loadExperiences();
