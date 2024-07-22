@@ -47,13 +47,6 @@ const loadExperiences = (experiences) => {
   }
 };
 
-const toggleButton = document.getElementById("menu-toggle");
-const nav1 = document.getElementById("nav1");
-
-toggleButton.addEventListener("click", function () {
-  nav1.classList.toggle("active");
-});
-
 
 
 
