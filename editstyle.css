@@ -93,11 +93,14 @@ nav ul li a:hover {
   font-size: 16px;
   text-align: center;
 }
-.sidebar img {
-  width: 100px;
-  height: 100px;
+.sidebar .profile {
+  position: relative;
+}
+.sidebar .profile img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  padding-bottom: 1em;
+  margin-bottom: 10px;
 }
 .profile p{
     margin: 8px;
@@ -205,9 +208,10 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color: #333;
+  background-color:white;
   border-top: 1px solid #e7e7e7;
-  color: white;
+  color: black;
+  font-size: 18px;
 }
 .footer-left,
 .footer-right {
