@@ -35,21 +35,28 @@
                 <div class="form-field">
                   <label for="company">Company Name:</label>
                   <input type="text" id="company" />
+                  <span class="error-message" id="company-error"></span>
                 </div>
                 <div class="form-field">
                   <label for="start-date">Start Date:</label>
                   <input type="date" id="start-date" />
+                  <span class="error-message" id="start-date-error"></span>
                 </div>
                 <div class="form-field">
                   <label for="end-date">End Date:</label>
                   <input type="date" id="end-date" />
+                  <span class="error-message" id="end-date-error"></span>
                 </div>
               </div>
               <div class="form-field">
                 <label for="description">Description:</label>
                 <textarea id="description"></textarea>
+                <span class="error-message" id="description-error"></span>
               </div>
+              
               <button class="save-btn" type="submit">Save</button>
+              <button type="button" id="close-btn" class="close-btn" onclick="closeExperienceForm()">Cancle</button>
+            
             </form>
             <div class="experience-entries" id="experience-entries"></div>
           </section>
