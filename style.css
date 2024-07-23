@@ -175,11 +175,169 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
+.menu-toggle{
+  background-color:gray;
+  border-radius: 5px; 
+  border: none; 
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-toggle svg{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
 
 
 
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    position: absolute;
+    right: 20px;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .content {
+    order: 2;
+    padding-right: 0; 
+    padding: 10px;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    order: 1;
+    padding: 10px;
+  }
+
+  .about {
+    order: 3; 
+    margin-top: 12px;
+  }
+
+  .footer {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left, .footer-right {
+    padding: 0;
+  }
+
+  .search-section input {
+    width: 50%;
+  }
+}
 
 
+@media (min-width: 768px) and (max-width: 1150px) {
+  .header {
+    font-size: 16px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 30%;
+    max-width: 300px;
+    margin-top: 0;
+  }
+
+  .about {
+    padding: 15px;
+  }
+
+  .experience {
+    padding: 15px;
+  }
+
+  .footer {
+    font-size: 16px;
+  }
+
+  .search-section input {
+    width: 40%;
+  }
+
+  .skill-row {
+    width: 100%;
+    margin-left: 3px;
+
+  }
+}
 
 
+@media (min-width: 1151px) {
+  .header {
+    font-size: 18px;
+  }
 
+  .nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 25%;
+  }
+
+  .about {
+    padding: 20px;
+  }
+
+  .experience {
+    padding: 20px;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+
+  .search-section input {
+    width: 25%;
+  }
+}
