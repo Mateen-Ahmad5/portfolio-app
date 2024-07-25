@@ -72,7 +72,7 @@ nav ul li a:hover {
 }
 .skills {
   width: 100%;
-  margin: 5px;  
+  margin: 5px;
 }
 .skills h3 {
   margin-bottom: 12px;
@@ -102,8 +102,8 @@ nav ul li a:hover {
   border-radius: 50%;
   margin-bottom: 10px;
 }
-.profile p{
-    margin: 8px;
+.profile p {
+  margin: 8px;
 }
 .experience-entries {
   max-height: 200px;
@@ -123,9 +123,8 @@ nav ul li a:hover {
 }
 .experience-form {
   display: none;
-   margin-top: 12px; 
-   margin-bottom: 12px;
- 
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 .experience-entry {
   border-bottom: 1px solid lightgray;
@@ -211,7 +210,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color:white;
+  background-color: white;
   border-top: 1px solid #e7e7e7;
   color: black;
   font-size: 18px;
@@ -237,18 +236,18 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 .button-container {
-    display: flex;
-    align-items: start;
+  display: flex;
+  align-items: start;
 }
 .icon-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
 }
 .icon-button svg {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 .error-message {
   color: red;
@@ -256,7 +255,7 @@ nav ul li a:hover {
   margin-top: 5px;
   font-size: 14px;
 }
- .close-btn {
+.close-btn {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -265,9 +264,139 @@ nav ul li a:hover {
   font-size: 16px;
   cursor: pointer;
   margin-top: 12px;
-} 
+}
 .close-btn:hover {
   background-color: #d32f2f;
 }
 
-  
+/* Responsive Styles */
+
+@media (min-width: 1151px) {
+  .header {
+    font-size: 18px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .main {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 25%;
+  }
+
+  .about {
+    padding: 20px;
+  }
+
+  .experience {
+    padding: 20px;
+  }
+
+  .footer {
+    font-size: 18px;
+  }
+
+  .search-section input {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1150px) {
+  .sidebar {
+    width: 32%;
+  }
+  .skills {
+    position: relative;
+    right: 12px;
+  }
+  .search-section input {
+    width: 40%;
+  }
+
+  .skill-row {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .content {
+    padding-right: 0;
+    order: 2;
+  }
+
+  .sidebar {
+    width: 94%;
+    max-width: none;
+    order: 1;
+    width: calc(100% - 40px);
+  }
+
+  .about {
+    margin-top: 16px;
+    order: 3;
+  }
+
+  .footer {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    padding: 0;
+  }
+  .form-inline {
+    display: flex;
+    flex-direction: column;
+  }
+  .experience-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .add-experience-btn {
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 380px) {
+  .sidebar {
+    width: 94%;
+    max-width: none;
+    width: calc(100% - 40px);
+  }
+  .skill-row {
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    right: 12px;
+    margin: 0 10px;
+  }
+  .skill-item {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-section input {
+    width: 40%;
+  }
+}
