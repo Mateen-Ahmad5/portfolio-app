@@ -14,7 +14,7 @@ let currentId = null;
 async function fetchExperiences() {
   try {
     const response = await fetch(
-      "http://localhost:5001/api/portfolio/experience/"
+      "http://localhost:8000/users/api/portfolio/experience/"
     );
     const experiences = await response.json();
     displayExperiences(experiences);
@@ -73,7 +73,7 @@ document
     try {
       if (currentId) {
         // Update existing experience
-        await fetch(`http://localhost:5001/api/portfolio/experience/${currentId}`, {
+        await fetch(`http://localhost:8000/api/portfolio/experience/${currentId}`, {
           method: 'PUT',
           body: JSON.stringify(experience),
           headers: {
@@ -82,7 +82,7 @@ document
         });
       } else {
         // Create new experience
-        await fetch("http://localhost:5001/api/portfolio/experience/", {
+        await fetch("http://localhost:8000/api/portfolio/experience/", {
           method: 'POST',
           body: JSON.stringify(experience),
           headers: {
@@ -92,7 +92,7 @@ document
       }
 
       const result = await fetch(
-        `http://localhost:5001/api/portfolio/experience/${currentId}`,
+        `http://localhost:8000/api/portfolio/experience/${currentId}`,
         {
           method: "PUT",
           body: JSON.stringify(experience),
