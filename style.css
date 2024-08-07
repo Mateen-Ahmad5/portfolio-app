@@ -72,10 +72,12 @@ nav ul li a:hover {
   gap: 16px;
   align-items: center;
   background-color: #fff;
-  padding: 20px;
 }
 .skills {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .skills h3 {
   margin-bottom: 12px;
@@ -84,7 +86,7 @@ nav ul li a:hover {
 .skill-row {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  padding: 5px;
 }
 .skill-item {
   background-color: #007bff;
@@ -96,11 +98,15 @@ nav ul li a:hover {
   font-size: 16px;
   text-align: center;
 }
-.sidebar img {
-  width: 100px;
-  height: 100px;
+.sidebar .profile {
+  position: relative;
+  padding: 12px;
+}
+.sidebar .profile img {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  padding-bottom: 1em;
+  margin-bottom: 10px;
 }
 .profile p {
   margin: 8px;
@@ -119,7 +125,7 @@ nav ul li a:hover {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 25%;
+  width: 40%;
 }
 .search-section input:focus {
   outline: none;
@@ -149,9 +155,8 @@ nav ul li a:hover {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  background-color:white;
+  background-color: white;
   border-top: 1px solid #e7e7e7;
-  /* color: black; */
   color: black;
   font-size: 18px;
 }
@@ -174,4 +179,94 @@ nav ul li a:hover {
 }
 .footer-right a:hover {
   text-decoration: underline;
+}
+
+.menu-toggle {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle svg {
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 100%;
+  }
+  .skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-row {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 10;
+  }
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .nav.active {
+    display: block;
+  }
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    order: 1;
+  }
+  .content {
+    padding-right: 0;
+    order: 2;
+  }
+  .about {
+    margin-top: 16px;
+    order: 3;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+  .search-section input {
+    width: 40%;
+  }
+  .skill-row {
+    display: flex;
+    justify-content: center;
+  }
+  .skills {
+    padding-bottom: 5%;
+  }
 }
