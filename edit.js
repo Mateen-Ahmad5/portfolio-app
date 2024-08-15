@@ -56,7 +56,7 @@ async function handleFormSubmit(event) {
       await createExperience(experienceData);
     }
     document.getElementById("experience-form").reset();
-    closeExperienceForm();
+    cancelExperienceForm()
     loadExperiences();
   } catch (error) {
     console.error("Error:", error);
@@ -254,11 +254,8 @@ async function loadExperiences() {
     console.error("Error:", error);
   }
 }
-function cancelExperienceForm() {
-  closeExperienceForm();
-}
 
-function closeExperienceForm() {
+function  cancelExperienceForm() {
   document.getElementById("experience-form").reset();
   document.getElementById("experience-form").style.display = "none";
   currentExperienceId = null;
