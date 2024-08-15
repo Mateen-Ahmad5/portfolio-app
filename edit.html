@@ -8,6 +8,13 @@
     <title>Edit page</title>
   </head>
   <body>
+    <div class="loading-indicator">
+      <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="31.4159 31.4159" stroke-dashoffset="15.7074">
+              <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite" />
+          </circle>
+      </svg>
+  </div>
     <div class="container">
       <header class="header">
         <h1>My Portfolio</h1>
@@ -30,11 +37,12 @@
               <h4>Experience</h4>
               <button class="add-experience-btn" id="add-experience-btn" onclick="showExperienceForm()">Add Experience</button>
             </div>
-            <form id="experience-form" class="experience-form">
+            <form id="experience-form" class="experience-form"  >
+              <input type="hidden" id="experience-id" />
               <div class="form-inline">
                 <div class="form-field">
                   <label for="company">Company Name:</label>
-                  <input type="text" id="company" />
+                  <input type="text" id="company" type="value" />
                   <span class="error-message" id="company-error"></span>
                 </div>
                 <div class="form-field">
@@ -53,10 +61,8 @@
                 <textarea id="description"></textarea>
                 <span class="error-message" id="description-error"></span>
               </div>
-              
               <button class="save-btn" type="submit">Save</button>
-              <button type="button" id="close-btn" class="close-btn" onclick="closeExperienceForm()">Cancle</button>
-            
+              <button type="button" id="close-btn" class="close-btn" onclick="cancelExperienceForm()">Cancle</button>
             </form>
             <div class="experience-entries" id="experience-entries"></div>
           </section>
