@@ -68,7 +68,6 @@ nav ul li a:hover {
   gap: 16px;
   align-items: center;
   background-color: #fff;
-  padding: 20px;
 }
 .skills {
   width: 100%;
@@ -95,6 +94,10 @@ nav ul li a:hover {
 }
 .sidebar .profile {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 12px;
 }
 .sidebar .profile img {
   width: 120px;
@@ -269,111 +272,47 @@ nav ul li a:hover {
   background-color: #d32f2f;
 }
 
-/* Responsive Styles */
-
-@media (min-width: 1151px) {
-  .header {
-    font-size: 18px;
-  }
-
-  .nav {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  .main {
-    flex-direction: row;
-  }
-
+@media (max-width: 1200px) {
   .sidebar {
-    width: 25%;
-  }
-
-  .about {
-    padding: 20px;
-  }
-
-  .experience {
-    padding: 20px;
-  }
-
-  .footer {
-    font-size: 18px;
-  }
-
-  .search-section input {
-    width: 25%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1150px) {
-  .sidebar {
-    width: 32%;
-  }
-  .skills {
-    position: relative;
-    right: 12px;
-  }
-  .search-section input {
-    width: 40%;
-  }
-
-  .skill-row {
     width: 100%;
   }
 }
 
-@media (max-width: 767px) {
-  .main {
-    flex-direction: column;
+@media (max-width: 992px) {
+  .sidebar {
+    max-width: none;
+    order: 1;
   }
-
   .content {
     padding-right: 0;
     order: 2;
   }
-
-  .sidebar {
-    width: 94%;
-    max-width: none;
-    order: 1;
-    width: calc(100% - 40px);
-  }
-
   .about {
     margin-top: 16px;
     order: 3;
   }
-
-  .footer {
-    font-size: 14px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-left,
-  .footer-right {
-    padding: 0;
-  }
-  .form-inline {
+  .main {
     display: flex;
     flex-direction: column;
+  }
+  .form-inline {
+    flex-direction: column;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
   }
   .experience-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .add-experience-btn {
-    padding: 8px 12px;
+    align-items: start;
+    gap: 8px;
   }
 }
+<<<<<<< HEAD
 .loading-indicator {
   position: fixed;
   top: 50%;
@@ -395,25 +334,16 @@ nav ul li a:hover {
     width: 94%;
     max-width: none;
     width: calc(100% - 40px);
+=======
+
+@media (max-width: 768px) {
+  .main {
+    padding: 10px;
+>>>>>>> origin/main
   }
-  .skill-row {
-    flex-direction: column;
-    width: 100%;
-    position: relative;
-    right: 12px;
-    margin: 0 10px;
-  }
-  .skill-item {
-    width: 100%;
-    margin: 5px 0;
-  }
-  .skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .search-section input {
-    width: 40%;
+  .experience-entries {
+    max-height: none;
+    overflow: visible;
   }
 }
 
